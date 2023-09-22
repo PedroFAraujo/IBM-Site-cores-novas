@@ -1,0 +1,256 @@
+@import url(variaveis-cores-fonte.min.css);
+
+#container__body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main{
+    flex: 1;
+}
+
+.mainTitle{
+    color: var(--vermelho);
+    text-align: center;
+    font-weight: bolder;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+    font-size: 3rem;
+    margin-top: 20px;
+}
+
+.historia{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.hist__text{
+    max-width: 700px;
+    text-align: justify;
+    margin-right: 2%;
+}
+
+#hist__title{
+    color: var(--vermelho);
+    font-weight: 600;
+    margin-top: 20px;
+    font-size: 2.3em;
+}
+
+.paragrafo__hist{
+    font-size: 1.1em;
+}
+
+.cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: var(--preto);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    perspective: 1000px;
+    box-shadow: 0 0 0 3px var(--amarelo);
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .cardMargem{
+    margin-right: 2%;
+  }
+  
+  .card img {
+    width: 48px;
+    fill: var(--amarelo);
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 3px var(--vermelho);
+  }
+  
+  .card__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: var(--branco);
+    transform: rotateX(-90deg);
+    transform-origin: bottom;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .card:hover .card__content {
+    transform: rotateX(0deg);
+  }
+  
+  .card__title {
+    margin: 0;
+    font-size: 24px;
+    color: var(--vermelho);
+    font-weight: 700;
+  }
+  
+  .card:hover svg {
+    scale: 0;
+  }
+  
+  .card__description {
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: var(--preto);
+    line-height: 1.4;
+  }
+
+  .card__link{
+    color: var(--vermelho);
+    text-decoration: underline;
+  }
+
+  .card__link:hover{
+    color: var(--preto);
+    transition-duration: 1s;
+  }
+  
+.img__map-bar{
+    width: 70px;
+    height: 70px;
+}
+
+.aspectos{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.aspecto__title{
+    color: var(--vermelho);
+    font-weight: 600;
+    margin-top: 1.4%;
+    font-size: 1.5em;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.aspecto__paragrafo{
+    font-size: 1.1em;
+    max-width: 350px;
+}
+
+.cards__aspectos{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.aspectosMargem{
+    margin-right: 3%;
+}
+
+.cards__paragrafo{
+    max-width: 300px;
+}
+
+@media only screen and (max-width: 1061px){
+    .historia{
+        margin-bottom: 2%;
+    }
+}
+
+@media only screen and (max-width: 991px){
+    .historia{
+    display: flex;
+    flex-direction: column;
+    }
+
+    .Divhist__img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #hist__img{
+        width: 300px;
+        height: 277px;
+    }
+
+    .cards{
+        margin-top: 4%;
+        margin-bottom: 4%;
+    }
+
+    .cards__aspectos{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cards__paragrafo{
+        font-size: 1.2em;
+        max-width: 400px;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .cards{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cardMargem{
+        margin-bottom: 4%;
+    }
+
+    #card__associar{
+        margin-left: -2%;
+    }
+
+    .aspectos{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cards__paragrafo{
+        font-size: 1.1em;
+        max-width: 350px;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .mainTitle{
+        margin-top: 20%;
+    }
+}
+
+@media only screen and (max-width: 345px){
+    .card {
+        width: 250px;
+        height: 150px;
+    }
+
+    #img__valores{
+        width: 290px;
+        height: 267px;
+    }
+}

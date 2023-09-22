@@ -1,0 +1,573 @@
+@import url(agendamento.min.css);
+@import url(dropdown.min.css);
+@import url(dashboard.css);
+@import url(cadastro-produto.min.css);
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap);
+
+#container__body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main{
+    flex: 1;
+}
+
+.segunda__parte{
+    display: none;
+}
+
+#passos{
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.passo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.passo i.ativado{
+    background-color: #014961;
+    box-shadow: 0px 3px 3px #01496149;
+}
+
+.passo i.desativado{
+    background-color: #FC7469;
+    opacity: 0.5;
+}
+
+.passo i{
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1.7em;
+    margin-bottom: 0.3em;
+    z-index: 1;
+    color: white;
+}
+
+.passo p.legenda__icone{
+    color: #014961;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.passo p.ativado{
+    color: #014961;
+}
+
+.passo p.desativado{
+    color: #FC7469;
+    opacity: 0.7;
+}
+
+/*.linha{
+    border-bottom: 1px solid black;
+    position: absolute;
+    top: 22.5px;
+    width: 71%;
+    left: 17%;
+    z-index: 0;
+}*/
+
+.titulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.mainTitle{
+    color: #FF7769;
+    font-weight: 600;
+    margin-top: 1.4%;
+    font-size: 3em;
+    text-align: center;
+}
+
+.subTitle{
+    color: #014961;
+    font-weight: 600;
+    margin-top: 0.2%;
+    font-size: 1.3em;
+    max-width: 700px;
+}
+
+.cadastro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.input__endereco{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    max-width: 650px;
+}
+
+.input__endereco__last{
+    margin-top: -30px;
+}
+
+.caixa__input{
+    font-family: 'Segoe UI', sans-serif;
+    margin: 1em 0 1em 0;
+    width: 650px;
+    position: relative;
+  }
+  
+  .caixa__input input {
+    font-size: 100%;
+    padding: 0.8em;
+    outline: none;
+    border: 2px solid #014961;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    width: 100%;
+    margin-bottom: 3%;
+  }
+
+  .input__endereco .caixa_input{
+    font-size: 100%;
+    padding: 0.8em;
+    outline: none;
+    border: 2px solid #014961;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    width: 50%;
+    margin-bottom: 3%;
+  }
+  
+  .input__endereco .caixa__input__margin{
+    margin-left: 20px;
+  }
+
+  .caixa__input label {
+    font-size: 100%;
+    position: absolute;
+    left: 0;
+    padding: 0.8em;
+    margin-left: 0.5em;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    color: rgb(100, 100, 100);
+  }
+  
+  .caixa__input :is(input:focus, input:valid)~label {
+    transform: translateY(-50%) scale(.9);
+    margin: 0em;
+    margin-left: 1.3em;
+    padding: 0.4em;
+    background-color: #e8e8e8;
+    height: 30px;
+    color: #014961;
+  }
+  
+  .caixa__input :is(input:focus, input:valid) {
+    border-color: #014961;
+  }
+
+  .caixa__input__select{
+    margin-top: 40px;
+  }
+
+  .caixa__input #region {
+    margin-left: 10px;
+    font-size: 100%;
+    padding: 0.8em;
+    outline: none;
+    border: 2px solid #014961;
+    background-color: rgba(255, 255, 255, 0.8);
+    max-width: 315px;
+    border-radius: 20px;
+    width: 100%;
+    margin-bottom: 3%;
+    outline: none;
+}
+
+.caixa__input #region:hover{
+    outline: none;
+}
+
+.caixa__input #label__dropdown__categoria{
+    transform: translateY(-50%) scale(.9);
+    margin: 0em;
+    margin-left: 1.3em;
+    padding: 0.4em;
+    background-color: #e8e8e8;
+    height: 30px;
+    color: #014961;
+}
+
+#data{
+    height: 80px;
+}
+
+.div__termos{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left;
+    margin-right: 26rem;
+}
+
+.planos{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem 0;
+}
+
+.plano-comum, .plano-turbinado{
+    background-color: #fff;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.plano__background-rosa{
+    margin-left: 5%;
+}
+
+.plano__cabecalho{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 0.5rem 0;
+}
+
+.plano-comum__titulo{
+    font-family: Inter;
+    font-size: 1.4rem;
+    color: #01496199;
+    font-weight: 600;
+}
+
+.plano-turbinado__titulo{
+    font-family: Inter;
+    font-size: 1.4rem;
+    color: #DF7369;
+    font-weight: 600;
+}
+
+.plano-comum__lista{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.plano-turbinado__lista{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.lista__itens-comum{
+    display: flex;
+    gap: 5px;
+}
+
+.lista__itens-comum::before{
+    content: url('../img/check\ azul.svg');
+}
+
+.lista__itens-turbinado{
+    display: flex;
+    gap: 5px;
+}
+
+.lista__itens-turbinado::before{
+    content: url('../img/check\ rosa.svg');
+}
+
+.formulario__botao{
+    border: 0;
+    outline: 0;
+    padding: 1rem 2.5rem;
+    border-radius: 40px;
+    color: #fff;
+
+}
+
+.formulario__botao--comum{
+    background-color: #01496199;
+}
+
+.formulario__botao--comum:hover{
+    transform: scale(1.01);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, .2);
+    background-color: rgba(1, 73, 97, 0.705);
+}
+
+.formulario__botao--turbinado{
+    background-color: #DF7369;
+}
+
+.formulario__botao--turbinado:hover{
+    transform: scale(1.01);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, .2);
+    background-color: #cc6c64;
+}
+
+.plano-turbinado__preco{
+    margin: 2rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+    font-weight: 300;
+    color: #DF7369;
+}
+
+.plano-turbinado__preco .preco{
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.plano__background-azul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    padding: 2rem 0;
+    background-color: #01496199;
+    border-radius: 15px;
+}
+
+.plano__background-rosa{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    background-color: #DF7369;
+    padding: 2rem 0;
+    border-radius: 15px;
+}
+
+#div__botao__continuar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+#mostrar-esconder{
+    background-color: #FC7469;
+    padding: 5px 20px;
+    width: 250px;
+    height: 40px;
+    border: none;
+    color: white;
+    border-radius: 20px;
+    font-size: 1.3rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+#mostrar-esconder:hover{
+    transform: scale(1.02);
+    transition-duration: 0.5s;
+}
+
+.formulario__botao{
+    padding: 5px;
+}
+
+@media only screen and (max-width:1000px) {
+    .separacao{
+        display: block;
+    }
+    
+    .planos{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 0;
+        flex-direction: column;   
+        gap: 10px;    
+    }
+
+    .formulario__campo-menor{
+        width: 60vw;
+    }
+}
+
+@media only screen and (max-width:800px) {
+    .mainTitle{
+        margin-top: 100px;
+    }
+}
+
+@media only screen and (max-width:700px) {
+    .mainTitle{
+        font-size: 2.5em;
+        text-align: center;
+    }
+    
+    .subTitle{
+        color: #014961;
+        font-weight: 600;
+        margin-top: 0.2%;
+        font-size: 1.1em;
+        max-width: 400px;
+    }
+
+    .caixa__input {
+        width: 400px;
+    }
+
+    .input__endereco{
+        width: 400px;
+    }
+
+    .input__endereco .caixa__input{
+        width: 200px;
+    }
+
+    .input__endereco .caixa__input__margin{
+        margin-left: 10px;
+    }
+
+    .div__termos{
+        margin-right: 11rem;
+    }
+}
+
+@media only screen and (max-width:580px) {
+    .input__endereco__last{
+        margin-top: 0px;
+    }
+
+    .caixa__input__select{
+        margin-top: 10px;
+    }
+    
+    .dropdown-categorias{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+
+    select#region{
+        width: 400px;
+    }
+
+    .caixa__input #region{
+        margin-left: -5px;
+    }
+
+    #label__dropdown__categoria{
+        display: none;
+    }
+
+    .input__endereco{
+        flex-direction: column;
+        width: 400px;
+    }
+    
+    .input__endereco .caixa__input{
+        width: 400px;
+    }
+
+    .input__endereco .caixa__input__margin{
+        margin-left: 0px;
+    }
+
+    
+    #passos{
+        margin-top: 20px;
+        max-width: 300px;
+    }
+
+    .linha{
+        width: 64%;
+        left: 18%;
+    }
+    
+    .plano__background-rosa{
+        margin-right: 5%;
+    }
+
+    .passo p.legenda__icone{
+        display: none;
+    }
+
+}
+
+
+@media only screen and (max-width:510px) {
+    .mainTitle{
+        margin-top: 20%;
+    }
+
+    .caixa__input {
+        width: 300px;
+    }
+
+    .input__endereco .caixa__input{
+        width: 300px;
+    }
+
+    .div__termos{
+        margin-right: 5rem;
+    }
+}
+
+@media only screen and (max-width:395px) {
+    .plano__background-azul{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    #passos{
+        max-width: 200px;
+    }
+
+    .linha{
+        width: 46%;
+        left: 27%;
+    }
+
+}
+
+@media only screen and (max-width:310px) {
+    .caixa__input{
+        width: 250px;
+    }
+
+    .input__endereco .caixa__input{
+        width: 250px;
+    }
+
+    .div__termos{
+        margin-right: 1rem;
+    }
+}
+
+@media only screen and (max-width:270px) {
+    .caixa__input{
+        width: 220px;
+    }
+
+    .input__endereco .caixa__input{
+        width: 220px;
+    }
+
+    .div__termos{
+        margin-right: 1rem;
+    }
+}
