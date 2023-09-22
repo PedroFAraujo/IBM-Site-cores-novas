@@ -48,68 +48,70 @@
 
 		<div class="campos__perfil">
 			<div class="opcoes__icones">
-				<div class="meio-circulo__branco-top">⠀</div>
-				<div class="icones__esquerda">
-					<div class="icone__esquerda"><img class="img__icon__esquerda" src="../assets/img/icone-perfil.svg" alt="Perfil"></div>
-					<div class="icone__esquerda"><img class="img__icon__esquerda" src="../assets/img/icone-carro.svg" alt="Veículos"></div>
-					<div class="icone__esquerda"><img class="img__icon__esquerda" src="../assets/img/icone-carrinho.svg" alt="Compras"></div>
-					<div class="icone__esquerda"><img class="img__icon__esquerda" src="../assets/img/icone-porco-dinheiro.svg" alt="Orçamentos"></div>
-					<div class="icone__esquerda"><img class="img__icon__esquerda" src="../assets/img/icone-agendamento.svg" alt="Agendamentos"></div>
-					<div class="icone__esquerda"><img class="img__icon__esquerda" src="../assets/img/icone-dinheiro.svg" alt="Plano"></div>
+				<div class="filho-opcoesIcone">
+					<div class="meio-circulo__branco-top">⠀</div>
+					<div class="icones__esquerda">
+						<div class="icone__esquerda"><img class="img__icon__esquerda" src="../assets/img/icone-perfil.svg" alt="Perfil"></div>
+						<div class="icone__esquerda"><img class="img__icon__esquerda" src="../assets/img/icone-carro.svg" alt="Veículos"></div>
+						<div class="icone__esquerda"><img class="img__icon__esquerda" src="../assets/img/icone-carrinho.svg" alt="Compras"></div>
+						<div class="icone__esquerda"><img class="img__icon__esquerda" src="../assets/img/icone-porco-dinheiro.svg" alt="Orçamentos"></div>
+						<div class="icone__esquerda"><img class="img__icon__esquerda" src="../assets/img/icone-agendamento.svg" alt="Agendamentos"></div>
+						<div class="icone__esquerda"><img class="img__icon__esquerda" src="../assets/img/icone-dinheiro.svg" alt="Plano"></div>
+					</div>
+					<div class="meio-circulo__branco-bottom">⠀</div>
 				</div>
-				<div class="meio-circulo__branco-bottom">⠀</div>
 			</div>
 
-			<div class="perfil__main">
-				<div class="espaco__branco">
-					<div class="upload">
-						<img src="../assets/img/img-perfil/<?php echo $user['fotoPerfil']; ?>" class="image" id="image" id="image"> <!-- Exibe a imagem atual do usuário -->
-						<div class="rightRound" id="upload">
-							<input type="file" name="fileImg" id ="fileImg" accept=".jpg, .jpeg, .png, .svg"> <!-- Input de seleção de arquivo -->
-							<i class="fa fa-camera" style='color:#ffc857'></i> <!-- Ícone de câmera -->
-						</div>
-						<div class="leftRound" id ="cancel" style="display: none;">
-							<i class = "fa fa-times" style='color:#ffc857'></i> <!-- Ícone de cancelar-->
-						</div>
-						<div class="rightRoundConfirm" id ="confirm" style="display: none;">
-							<input type="submit"> <!-- Botão de envio do formulário -->
-							<i class = "fa fa-check" style='color:#ffc857'></i> <!-- Ícone de confirmar -->
+			
+				<div class="perfil__main">
+					<div class="espaco__branco">
+						<div class="upload">
+							<img src="../assets/img/img-perfil/<?php echo $user['fotoPerfil']; ?>" class="image" id="image" id="image"> <!-- Exibe a imagem atual do usuário -->
+							<div class="rightRound" id="upload">
+								<input type="file" name="fileImg" id ="fileImg" accept=".jpg, .jpeg, .png, .svg"> <!-- Input de seleção de arquivo -->
+								<i class="fa fa-camera" style='color:#ffc857'></i> <!-- Ícone de câmera -->
+							</div>
+							<div class="leftRound" id ="cancel" style="display: none;">
+								<i class = "fa fa-times" style='color:#ffc857'></i> <!-- Ícone de cancelar-->
+							</div>
+							<div class="rightRoundConfirm" id ="confirm" style="display: none;">
+								<input type="submit"> <!-- Botão de envio do formulário -->
+								<i class = "fa fa-check" style='color:#ffc857'></i> <!-- Ícone de confirmar -->
+							</div>
 						</div>
 					</div>
+
+					<div class="perfil__info">
+						<div class="caixa__info">
+							<i class='bx bx-user icone'></i>
+							<div class="perfil__texto">
+								<p><?=$_SESSION['nomeCliente']?></p>
+							</div>
+							<i class='bx bxs-user span'></i>
+						</div>
+
+						<div class="caixa__info">
+							<i class='bx bx-envelope icone'></i>
+							<div class="perfil__texto">
+								<p id="perfil__texto__email"><?=$_SESSION['email']?></p>
+							</div>
+							<i class='bx bxs-user span'></i>
+						</div>
+
+						<div class="caixa__info">
+							<img class="icone__turnmotors__perfil" src="../assets/img/logo-turnmotors-vermelha.svg" alt="Logo Turn Motors">
+							<div class="perfil__texto">
+								<p>Plano: <?=$_SESSION['plano']?></p>
+							</div>
+							<i class='bx bxs-user span'></i>
+						</div>
+					</div>
+
+					<div class="botao">
+						<a class="btn__perfil" href="#">Ver Mais</a>
+					</div>
+
 				</div>
-
-				<div class="perfil__info">
-					<div class="caixa__info">
-						<i class='bx bx-user icone'></i>
-						<div class="perfil__texto">
-							<p><?=$_SESSION['nomeCliente']?></p>
-						</div>
-						<i class='bx bxs-user span'></i>
-					</div>
-
-					<div class="caixa__info">
-						<i class='bx bx-envelope icone'></i>
-						<div class="perfil__texto">
-							<p id="perfil__texto__email"><?=$_SESSION['email']?></p>
-						</div>
-						<i class='bx bxs-user span'></i>
-					</div>
-
-					<div class="caixa__info">
-						<img class="icone__turnmotors__perfil" src="../assets/img/logo-turnmotors-vermelha.svg" alt="Logo Turn Motors">
-						<div class="perfil__texto">
-							<p>Plano: <?=$_SESSION['plano']?></p>
-						</div>
-						<i class='bx bxs-user span'></i>
-					</div>
-				</div>
-
-				<div class="botao">
-					<a class="btn__perfil" href="#">Ver Mais</a>
-				</div>
-
-			</div>
-
 		</div>
 		
 
