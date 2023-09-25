@@ -253,7 +253,7 @@ main{
 }
 
 .plano__img-velocimetro{
-    background-color: #f4f7f52f;
+    background-color: #f4f7f554;
     padding: 10px;
     border-radius: 50%;
     width: 100px;
@@ -316,6 +316,7 @@ main{
 
 .formulario__botao--comum{
     background-color: var(--amarelo);
+    color: var(--preto);
 }
 
 .formulario__botao--comum:hover{
@@ -326,6 +327,7 @@ main{
 
 .formulario__botao--turbinado{
     background-color: var(--amarelo);
+    color: var(--preto);
 }
 
 .formulario__botao--turbinado:hover{
