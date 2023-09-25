@@ -25,221 +25,242 @@
 			session_start();
 		?>
 
-		<header>
+<header>
 
-			<div class="pai__header">
-				<div class="filho__header">
-					<div class="logotipo">
-						<a class="logo" href="index.php">
-							<figure class="figure-container">
-								<img class="img__logo" src="assets/img/logo-turnmotors.png" alt="Logo Turn Motors" />
-								<figcaption class="legenda__icones__atividade" id="title__header">TURN MOTORS</figcaption>
-							</figure>
-						</a>
-					</div>
-					<div>
-						<ul class="paginas">
-							<li class="opcoes__paginas"><a class="hyperlink__paginas" href="pags/personalizacoes.php">Personalizações</a></li>
-						<li class="opcoes__paginas"><a class="hyperlink__paginas" href="pags/produtos.php">Produtos</a></li>
-						<li class="opcoes__paginas"><a class="hyperlink__paginas" href="pags/aboutus.php">Sobre Nós</a></li>
-						</ul>
-					</div>
-					<div class="icones__direita">
-						<ul class="icones">
-							<li> <img class="lupa icone__header" src="assets/img/icone-search.svg" alt="Pesquisar"> </li>
-							<li> <img class="icone__header" id="carrinho" src="assets/img/icone-carrinho.svg" alt="Carrinho"> </li>
-							<li> <a class="cabeca" href="pags/login.php"> <img class="icone__header" src="assets/img/icone-perfil.svg" alt="Login"> </a> </li>
-						</ul>
-					</div>
-				</div>
-			</div>
+<div class="pai__header">
+	<div class="filho__header">
+		<div class="logotipo">
+			<a class="logo" href="index.php">
+				<figure class="figure-container">
+					<img class="img__logo" src="assets/img/logo-turnmotors.png" alt="Logo Turn Motors" />
+					<figcaption class="legenda__icones__atividade" id="title__header">TURN MOTORS</figcaption>
+				</figure>
+			</a>
+		</div>
+		<div>
+			<ul class="paginas">
+				<li class="opcoes__paginas"><a class="hyperlink__paginas" href="pags/personalizacoes.php">Personalizações</a></li>
+				<li class="opcoes__paginas"><a class="hyperlink__paginas" href="pags/produtos.php">Produtos</a></li>
+				<li class="opcoes__paginas"><a class="hyperlink__paginas" href="pags/aboutus.php">Sobre Nós</a></li>
+			</ul>
+		</div>
+		<div class="icones__direita">
+			<ul class="icones">
+				<li> <img class="lupa icone__header" src="assets/img/icone-search.svg" alt="Pesquisar"> </li>
+				<li class="pai-carrinho">
+					<nav id="carrinho__header">
+						<img class="seta__header__carrinho" src="assets/img/seta-modal.svg" alt="">
+						<?php if (!empty($_SESSION['carrinho'])) { ?>
+							<div id="itens__header__modal_carrinho">
+								<div class="table__itens_header_carrinho">
+									<table style="border-collapse: separate;border-spacing: 0 10px ; ">
+										<tbody>
+											<?php
+											$totalCarrinho = 0; // Variável para calcular o total do carrinho
+											foreach ($_SESSION['carrinho'] as $idProd => $value) {
+												$subtotal = $value['preco'] * $value['quantidade'];
+												$totalCarrinho += $subtotal;
+											?>
 
-			<!--<div id="header">
-				<div class="conj_header_menu">
-					<ul id="form_header_menu">
-						<li> 
-							<a class="cabeca" href="index.php"> 
-								<figure class="figure-container">
-									<img width="90px" src="assets/img/logo-turnmotors.png" alt="Pintura" />
-									<figcaption class="legenda__icones__atividade" id="title__header">TURN MOTORS</figcaption>
-								</figure> 
-							</a> 
-						</li>
-						<li> <a class="cabeca" href="pags/personalizacoes.php">Personalizações</a> </li>
-						<li> <a class="cabeca" href="pags/produtos.php">Produtos</a> </li>
-						<li> <a class="cabeca" href="pags/aboutus.php">Sobre Nós</a> </li>
-					</ul>
-				</div>
-				<div class="conj_header_menu">
-					<ul id="form_header_ferramentas">
-						<li> <img class="lupa" width="40px" height="auto" src="assets/img/icone-search.svg" alt="Pesquisar"> </li>
-						<li> <img id="carrinho" width="40px" src="assets/img/icone-carrinho.svg" alt="Carrinho"> </li>
-						<li> <a class="cabeca" href="pags/login.php"> <img width="40px" src="assets/img/icone-perfil.svg" alt="Login"> </a> </li>
-					</ul>
-				</div>
-			</div>-->
-		
-			<?php 
+												<tr>
+													<td class="img__table__header_carrinho" style="width: 40%;"> <img src="<?php echo $value['caminho_imagem'] ?>" alt="..."> </td>
 
-					if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-						if (isset($_POST['adicionar'])) {
-							$idProd = (int)$_POST['adicionar'];
-							
-							$idProd--;
-						
-						// Verifique se o ID do produto existe no array de IDs de produtos
-						if (isset($idsProdutos[$idProd])) {
-							$idProd++;
-							$codigoProdutoAdd = $idProd;
-						
+													<td class="info__table__header_carrinho">
+														<div>
+															<h2> <?php echo $value['nome'] ?></h2>
+														</div>
+														<div>
+															<h3>R$: <?php echo $value['preco'] ?></h3>
+														</div>
+														<div class="table_itens__header__carrinho__config">
+															<div class="table__itens_header_carrinho_botoes">
+																<form method="POST" action="?subtrair=<?php echo $idProd ?>">
+																	<button id="botaoSubtrair_carrinho_header" type="submit" name="subtrair" value="<?php echo $idProd ?>">-</button>
+																</form>
 
-							// Consulta ao banco de dados para obter as informações do produto
-							$sqlProduto = "SELECT nome, preco, caminho_imagem FROM produto WHERE codigoProduto = :codigoProdutoAdd";
-							$stmtProduto = $pdo->prepare($sqlProduto);
-							$stmtProduto->bindParam(':codigoProdutoAdd', $codigoProdutoAdd, PDO::PARAM_INT);
+																<span id="contador_carrinho_header"> <?php echo $value['quantidade'] ?></span>
+																<form method="POST" action="?adicionar=<?php echo $idProd ?>">
+																	<button id="botaoAcrescentar_carrinho_header" type="submit" name="adicionar" value="<?php echo $idProd ?>">+</button>
+																</form>
+															</div>
 
-							if ($stmtProduto->execute()) {
-								$rowProduto = $stmtProduto->fetch(PDO::FETCH_ASSOC);
-
-								if ($rowProduto) {
-									$nomeProduto = $rowProduto['nome'];
-									$precoProduto = $rowProduto['preco'];
-									$imagemProdutoCart = $rowProduto['caminho_imagem'];
-
-									// Verifique se o produto já está no carrinho
-									if (isset($_SESSION['carrinho'][$idProd])) {
-										$_SESSION['carrinho'][$idProd]['quantidade']++;
-									} else {
-										$_SESSION['carrinho'][$idProd] = array(
-											'quantidade' => 1,
-											'nome' => $nomeProduto,
-											'preco' => $precoProduto,
-											'caminho_imagem' => $imagemProdutoCart
-										);
-									}
-								} else {
-									die('Produto não encontrado no banco de dados.');
-								}
-							} else {
-								die('Erro ao executar a consulta.');
-							}
-						} else {
-							echo 'ID do produto inválido.';
-							
-							$totalCarrinho -= $subtotal;
-						}
+															<form method="POST" action="?remover=<?php echo $idProd ?>">
+																<button style="border: none; color: #003445; background-color: #fff; text-decoration: none" type="submit" name="remover" value="<?php echo $idProd ?>">Excluir</button>
+															</form>
 
 
-						} elseif (isset($_POST['subtrair'])) {
-							$idProdutoRemover = (int)$_POST['subtrair'];
-							
-								// Verifique se o produto está no carrinho antes de removê-lo
-							if (isset($_SESSION['carrinho'][$idProdutoRemover])) {
-								// Verifique se a quantidade é maior do que 1 antes de subtrair
-								if ($_SESSION['carrinho'][$idProdutoRemover]['quantidade'] > 1) {
-									$_SESSION['carrinho'][$idProdutoRemover]['quantidade']--;
-								} else {
-									// Se a quantidade for 1, remova o produto do carrinho
-									unset($_SESSION['carrinho'][$idProdutoRemover]);
-								}
-							}
+															<span href="pags/produtos.php"></span>
+
+														</div>
+													</td>
+												</tr>
+											<?php } ?>
+										</tbody>
+									</table>
 
 
-						} elseif (isset($_POST['remover'])) {
-							$idProdutoRemover = (int)$_POST['remover'];
-						
-							// Verifique se o produto está no carrinho antes de removê-lo
-				
-								if (isset($_SESSION['carrinho'][$idProdutoRemover])) {
-						
-									// Remova o produto do carrinho
-						
-									unset($_SESSION['carrinho'][$idProdutoRemover]);
-								} else {
-						
-									echo '<script>alert("O item não está no carrinho");</script>';
-								}
-								}
+								</div>
+								<br>
+								<br>
+								<div class="carrinho__header__finalizacao">
+									<p class="fs-2">Total: <?php echo $totalCarrinho ?>R$</p>
+									<div class="text-center">
+										<button><a href="pags/carrinho.php"> Ver Carrinho</a> </button>
+										<a style="text-decoration: none; color: #003445" href="">Frete grátis com o Plano Turbinado</a>
+									</div>
+
+
+								</div>
+							</div>
+						<?php } else { ?>
+
+							<div id="carrinho__header_vazio">
+								<img width="100px" src="assets/img/iconeSacolaCompras.png" alt="">
+								<p>Não há produtos ainda</p>
+							</div>
+						<?php } ?>
+
+					</nav>
+					<img class="icone__header" id="carrinho" src="assets/img/icone-carrinho.svg" alt="Carrinho">
+				</li>
+				<li> <a class="cabeca" href="pags/login.php"> <img class="icone__header" src="assets/img/icone-perfil.svg" alt="Login"> </a> </li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!--<div id="header">
+	<div class="conj_header_menu">
+		<ul id="form_header_menu">
+			<li> <a class="cabeca" href="personalizacoes.php">Personalizações</a> </li>
+			<li> <a class="cabeca" href="produtos.php">Produtos</a> </li>
+			<li> <a class="cabeca" href="aboutus.php">Sobre Nós</a> </li>
+			<li> 
+				<a class="cabeca" href="index.php"> 
+					<figure class="figure-container">
+						<img width="90px" src="../assets/img/logo-turnmotors.png" alt="Logo Turn Motors" />
+						<figcaption class="legenda__icones__atividade" id="title__header">TURN MOTORS</figcaption>
+					</figure> 
+				</a>
+			</li>
+			<li> <img class="lupa" width="50px" height="auto" src="../assets/img/icone-search.svg" alt="Pesquisar"> </li>
+			<li> <img id="carrinho" width="50px" src="../assets/img/icone-carrinho.svg" alt="Carrinho"> </li>
+			<li> <a class="cabeca" href="../pags/login.php"> <img width="50px" src="../assets/img/icone-perfil.svg" alt="Login"> </a> </li>
+		</ul>
+	</div>
+    </div>
+
+<div id="header">
+	<div class="conj_header_menu">
+		<ul id="form_header_menu">
+			<li> 
+				<a class="cabeca" href="index.php"> 
+					<figure class="figure-container">
+						<img width="90px" src="../assets/img/logo-turnmotors.png" alt="Logo Turn Motors" />
+						<figcaption class="legenda__icones__atividade" id="title__header">TURN MOTORS</figcaption>
+					</figure> 
+				</a>
+			</li>
+			<li> <a class="cabeca" href="personalizacoes.php">Personalizações</a> </li>
+			<li> <a class="cabeca" href="produtos.php">Produtos</a> </li>
+			<li> <a class="cabeca" href="aboutus.php">Sobre Nós</a> </li>
+		</ul>
+	</div>
+	<div class="conj_header_ferramentas">
+		<ul id="form_header_ferramentas">
+			<li> <img class="lupa" width="40px" height="auto" src="../assets/img/icone-search.svg" alt="Pesquisar"> </li>
+			<li> <img id="carrinho" width="40px" src="../assets/img/icone-carrinho.svg" alt="Carrinho"> </li>
+			<li> <a class="cabeca" href="../pags/login.php"> <img width="40px" src="../assets/img/icone-perfil.svg" alt="Login"> </a> </li>
+		</ul>
+	</div>
+</div>-->
+
+<?php
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+	if (isset($_POST['adicionar'])) {
+		$idProd = (int)$_POST['adicionar'];
+
+		$idProd--;
+
+		// Verifique se o ID do produto existe no array de IDs de produtos
+		if (isset($idsProdutos[$idProd])) {
+			$idProd++;
+			$codigoProdutoAdd = $idProd;
+
+
+			// Consulta ao banco de dados para obter as informações do produto
+			$sqlProduto = "SELECT nome, preco, caminho_imagem FROM produto WHERE codigoProduto = :codigoProdutoAdd";
+			$stmtProduto = $pdo->prepare($sqlProduto);
+			$stmtProduto->bindParam(':codigoProdutoAdd', $codigoProdutoAdd, PDO::PARAM_INT);
+
+			if ($stmtProduto->execute()) {
+				$rowProduto = $stmtProduto->fetch(PDO::FETCH_ASSOC);
+
+				if ($rowProduto) {
+					$nomeProduto = $rowProduto['nome'];
+					$precoProduto = $rowProduto['preco'];
+					$imagemProdutoCart = $rowProduto['caminho_imagem'];
+
+					// Verifique se o produto já está no carrinho
+					if (isset($_SESSION['carrinho'][$idProd])) {
+						$_SESSION['carrinho'][$idProd]['quantidade']++;
+					} else {
+						$_SESSION['carrinho'][$idProd] = array(
+							'quantidade' => 1,
+							'nome' => $nomeProduto,
+							'preco' => $precoProduto,
+							'caminho_imagem' => $imagemProdutoCart
+						);
 					}
+				} else {
+					die('Produto não encontrado no banco de dados.');
+				}
+			} else {
+				die('Erro ao executar a consulta.');
+			}
+		} else {
+			echo 'ID do produto inválido.';
 
-				
+			$totalCarrinho -= $subtotal;
+		}
+	} elseif (isset($_POST['subtrair'])) {
+		$idProdutoRemover = (int)$_POST['subtrair'];
 
+		// Verifique se o produto está no carrinho antes de removê-lo
+		if (isset($_SESSION['carrinho'][$idProdutoRemover])) {
+			// Verifique se a quantidade é maior do que 1 antes de subtrair
+			if ($_SESSION['carrinho'][$idProdutoRemover]['quantidade'] > 1) {
+				$_SESSION['carrinho'][$idProdutoRemover]['quantidade']--;
+			} else {
+				// Se a quantidade for 1, remova o produto do carrinho
+				unset($_SESSION['carrinho'][$idProdutoRemover]);
+			}
+		}
+	} elseif (isset($_POST['remover'])) {
+		$idProdutoRemover = (int)$_POST['remover'];
 
-			?>
+		// Verifique se o produto está no carrinho antes de removê-lo
 
-			<div id="fade"></div>
-			<nav id="carrinho__header">
-				<img class="seta__header__carrinho" src="assets/img/seta-modal.svg" alt="">
-					<?php  if (!empty($_SESSION['carrinho'])) { ?>         
-				<div id="itens__header__modal_carrinho">
-					<div class="table__itens_header_carrinho">
-						<table style="border-collapse: separate;border-spacing: 0 10px ; ">
-							<tbody>
-									<?php
-									$totalCarrinho = 0; // Variável para calcular o total do carrinho
-									foreach ($_SESSION['carrinho'] as $idProd => $value) {
-										$subtotal = $value['preco'] * $value['quantidade'];
-										$totalCarrinho += $subtotal;
-									?>
-								
-								<tr >    
-								<td class="img__table__header_carrinho" style="width: 40%;"> <img src="<?php echo substr($value['caminho_imagem'], 3) ?>" alt="..."> </td>
-							
-								<td class="info__table__header_carrinho">
-									<div>
-										<h2> <?php echo $value['nome'] ?></h2>
-									</div>
-									<div><h3>R$: <?php echo $value['preco'] ?></h3></div>
-									<div class="table_itens__header__carrinho__config">
-										<div class="table__itens_header_carrinho_botoes">
-											<form method="POST" action="?subtrair=<?php echo $idProd ?>">
-												<button id="botaoSubtrair_carrinho_header" type="submit" name="subtrair" value="<?php echo $idProd ?>">-</button>
-											</form>
-											
-											<span id="contador_carrinho_header"> <?php echo $value['quantidade'] ?></span>
-											<form method="POST" action="?adicionar=<?php echo $idProd ?>">
-												<button id="botaoAcrescentar_carrinho_header" type="submit" name="adicionar" value="<?php echo $idProd ?>">+</button>
-											</form>
-										</div>
-										
-										<form method="POST" action="?remover=<?php echo $idProd ?>">
-											<button style="border: none; color: #003445; background-color: #fff; text-decoration: none" type="submit" name="remover" value="<?php echo $idProd ?>">Excluir</button>
-										</form>
-										
-										
-										<span href="produtos.php"></span>
-									
-									</div>
-								</td>
-								</tr>
-							<?php }?>
-							</tbody>
-						</table>
+		if (isset($_SESSION['carrinho'][$idProdutoRemover])) {
+
+			// Remova o produto do carrinho
+
+			unset($_SESSION['carrinho'][$idProdutoRemover]);
+		} else {
+
+			echo '<script>alert("O item não está no carrinho");</script>';
+		}
+	}
+}
 
 
-					</div>
-					<br>
-					<br>
-					<div class="carrinho__header__finalizacao">
-					<p class="fs-2">Total: <?php echo $totalCarrinho ?>R$</p>
-						<div class="text-center">
-							<button><a href="pags/carrinho.php"> Ver Carrinho</a> </button>
-							<a style="text-decoration: none; color: #003445" href="">Frete grátis com o Plano Turbinado</a>
-						</div>
 
 
-					</div>
-				</div>
-				<?php }else{ ?>
-			
-					<div id="carrinho__header_vazio">
-					<img width="100px" src="assets/img/iconeSacolaCompras.png" alt="">
-					<p>Não há produtos ainda</p>
-					</div> 
-					<?php } ?>     
+?>
 
-			</nav>
-		</header>
+<div id="fade"></div>
+</header>
 
 		<nav id="header_search_aparecer2">
 			<nav class="header_search_aparecer ">
