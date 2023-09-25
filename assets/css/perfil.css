@@ -6,11 +6,9 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    overflow: hidden;
 }
 
 main{
-    margin: 30px 0px 70px 0px;
     flex: 1;
 }
 
@@ -23,24 +21,33 @@ main{
     font-weight: bolder;
     text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
     font-size: 3rem;
-    padding: 0.5rem 0;
-    margin: 3rem 0;
 }
 
 .campos__perfil{
-    position: relative;
-
-    display: grid;
-    grid-template-columns: 80px auto;
-    justify-content: start;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100vw; 
+    display: flex;
     align-items: center;
-    width: 100vw;
+    justify-content: center;
+}
+
+.perfil__container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .opcoes__icones{
     background-color: var(--preto);
     box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.2);
     width: 80px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
 }
 
 .meio-circulo__branco-top, .meio-circulo__branco-bottom{
@@ -78,14 +85,12 @@ main{
 }
 
 .perfil__main{
-    justify-self: center;
-    position: absolute;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--preto); 
+    background-color: var(--preto);
+    width: 400px;
     border-radius: 20px;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
 }
@@ -194,3 +199,242 @@ main{
     color: var(--preto);
 }
 
+.perfil__cards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2rem;
+}
+
+.perfil__veiculos, .perfil__compras{
+    border-radius: 20px;
+    background-color: var(--preto);
+    height: 200px;
+    width: 400px;
+    margin-bottom: 2rem;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
+}
+
+.perfil__veiculos-compra__branco{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--branco);
+    border-radius: 20px 20px 0px 0px;
+    box-shadow: 3px -3px 4px rgba(0, 0, 0, 0.2);
+}
+
+.perfil__veiculos-compra__branco h3{
+    color: var(--vermelho);
+    text-align: center;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+    font-size: 2rem;
+}
+
+.perfil__veiculos-compra__branco i{
+    margin-top: -5px;
+    color: var(--vermelho);
+    text-align: center;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+    font-size: 2rem;
+}
+
+.perfil__veiculo__conteudo{
+    margin: 10px 0px 0px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.perfil__veiculo__img img{
+    border: 4px solid var(--amarelo);
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.perfil__veiculo__texto{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.perfil__veiculo__texto h4{
+    text-align: center;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+    font-size: 1.5rem;
+    color: var(--branco);
+}
+
+.perfil__veiculo__texto h5{
+    text-align: center;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+    font-size: 1.3rem;
+    color: var(--branco);
+}
+
+.perfil__veiculo__botoes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.perfil__veiculo__botao{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--amarelo);
+    color: var(--preto);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    width: 150px;
+    height: 35px;
+    margin: 0px 10px 0px 10px;
+    box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.3);
+    font-size: 1.25rem;
+    text-decoration: none;
+}
+
+.perfil__veiculo__botao:hover{
+    box-shadow: 4px 4px 4px rgba(255, 255, 255, 0.3);
+    transform: scale(1.03);
+    transition-duration: 0.5s;
+    color: var(--preto);
+}
+
+.campos__perfil__mobile{
+    display: none;
+}
+
+.margin{
+    margin-top: 200px;
+}
+
+@media only screen and (max-width: 1200px){
+
+    main{
+        margin-top: 1.5em;
+    }
+
+    .campos__perfil__pc{
+        display: none;
+    }
+
+    .campos__perfil__mobile{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .opcoes__icones__mobile{
+        background-color: var(--preto);
+        box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.2);
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .icones__esquerda{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .meio-circulo__branco-top{
+        height: 130px;
+        width: 20px;
+        border-radius: 0px 20px 20px 0px;
+    }
+
+    .meio-circulo__branco-bottom{
+        height: 130px;
+        width: 20px;
+        border-radius: 20px 0px 0px 20px;
+    }
+
+    .perfil__main__mobile .espaco__branco{
+        height: 160px;
+        border-radius: 20px 20px 50px 50px;
+    }
+
+
+    .perfil__main__mobile{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--preto);
+        width: 400px;
+        border-radius: 20px;
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .div__title h1{
+        font-size: 2rem;
+    }
+
+    .caixa__info{
+        width: 300px;
+    }
+
+    #perfil__texto__email{
+        font-size: 1.05rem;
+    }
+    
+    .caixa__info p{
+        font-size: 1.2rem;
+    }
+
+    .btn__perfil{
+        width: 300px;
+        margin-top: -20px;
+    }
+
+    .perfil__cards__mobile{
+        margin-top: 20px;
+    }
+
+    .opcoes__icones__mobile-pequeno{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 900px){
+    .opcoes__icones__mobile{
+        display: none;
+    }
+
+    .opcoes__icones__mobile-pequeno{
+        background-color: var(--preto);
+        box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.2);
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .icones__esquerda{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .linha__icones__esquerda{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
