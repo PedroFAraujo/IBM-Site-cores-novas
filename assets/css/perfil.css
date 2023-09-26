@@ -24,11 +24,7 @@ main{
 }
 
 .campos__perfil{
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    width: 100vw; 
+    margin-top: 3rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,10 +40,7 @@ main{
     background-color: var(--preto);
     box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.2);
     width: 80px;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translate(0, -50%);
+    margin-right: 6rem;
 }
 
 .meio-circulo__branco-top, .meio-circulo__branco-bottom{
@@ -204,7 +197,7 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-left: 2rem;
+    margin-left: 6rem;
 }
 
 .perfil__veiculos, .perfil__compras{
@@ -230,7 +223,8 @@ main{
     color: var(--vermelho);
     text-align: center;
     text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
-    font-size: 2rem;
+    font-size: 1.5rem;
+    padding: 0.3rem;
 }
 
 .perfil__veiculos-compra__branco i{
@@ -253,7 +247,7 @@ main{
     border: 2px solid var(--amarelo);
     border-radius: 50%;
     padding: 5px;
-    width: 75px;
+    width: 65px;
 }
 
 .perfil__veiculo__texto{
@@ -316,7 +310,65 @@ main{
     margin-top: 200px;
 }
 
-@media only screen and (max-width: 1200px){
+.icones__esquerda .icone__esquerda{
+  margin: 0rem 2rem;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.icones__esquerda .icone__esquerda .legenda__icone__pc{
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    background: var(--branco);
+    color: var(--branco);
+    padding: 10px 18px;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 25px;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+    transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+/*HOVER ÍCONES LEFT NAV*/
+.icones__esquerda .icone__esquerda:hover .legenda__icone__pc{
+  top: -2.5rem;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.icone__esquerda .legenda__icone__pc:before{
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    background: var(--branco);
+    left: 50%;
+    bottom: -6px;
+    transform: translateX(-50%) rotate(45deg);
+    transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+.icones__esquerda .icone__esquerda:hover .legenda__icone__pc,
+.icones__esquerda .icone__esquerda:hover .legenda__icone__pc:before{
+  background: var(--branco);
+  color: var(--vermelho);
+}
+
+.perfil__menu-hamburguer{
+    display: none;
+}
+
+@media only screen and (max-width: 1150px){
 
     main{
         margin-top: 1.5em;
@@ -339,7 +391,7 @@ main{
         width: 100vw;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-items: center;
     }
 
@@ -411,31 +463,60 @@ main{
     }
 }
 
-@media only screen and (max-width: 900px){
+@media only screen and (max-width: 1100px){
     .opcoes__icones__mobile{
         display: none;
     }
 
+}
+
+@media only screen and (max-width: 505px){
+    .perfil__main__mobile .espaco__branco{
+        height: 160px;
+        border-radius: 20px 20px 70px 70px;
+    }
+
+
+    .perfil__main__mobile{
+        margin-top: 3rem;
+        width: 300px;
+    }
+
+    .div__title h1{
+        font-size: 2rem;
+    }
+
+    .caixa__info{
+        width: 225px;
+    }
+
+    #perfil__texto__email{
+        font-size: 0.8rem;
+    }
+    
+    .caixa__info p{
+        font-size: 1rem;
+    }
+
+    .btn__perfil{
+        width: 225px;
+    }
+
+    .perfil__cards__mobile{
+        margin-top: 20px;
+    }
+
     .opcoes__icones__mobile-pequeno{
-        background-color: var(--preto);
-        box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.2);
-        width: 100vw;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+        display: none;
     }
 
-    .icones__esquerda{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .perfil__veiculos, .perfil__compras{
+        width: 300px;
     }
 
-    .linha__icones__esquerda{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
+    .perfil__veiculo__botao{
+        width: 100px;
+        font-size: 1rem;
     }
+
 }

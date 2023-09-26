@@ -50,22 +50,39 @@
 				<div class="meio-circulo__branco-top">⠀</div>
 				<div class="icones__esquerda">
 					<div class="icone__esquerda">
-
+						<div class="legenda__icone__pc">
+							Perfil
+						</div>
 						<img class="img__icon__esquerda" src="../assets/img/icone-perfil.svg" alt="Perfil">
 					</div>
 					<div class="icone__esquerda">
+						<div class="legenda__icone__pc">
+							Veículos
+						</div>
 						<img class="img__icon__esquerda" src="../assets/img/icone-carro.svg" alt="Veículos">
 					</div>
 					<div class="icone__esquerda">
+						<div class="legenda__icone__pc">
+							Compras
+						</div>
 						<img class="img__icon__esquerda" src="../assets/img/icone-carrinho.svg" alt="Compras">
 					</div>
 					<div class="icone__esquerda">
+						<div class="legenda__icone__pc">
+							Orçamentos
+						</div>
 						<img class="img__icon__esquerda" src="../assets/img/icone-porco-dinheiro.svg" alt="Orçamentos">
 					</div>
 					<div class="icone__esquerda">
+						<div class="legenda__icone__pc">
+							Agendamentos
+						</div>
 						<img class="img__icon__esquerda" src="../assets/img/icone-agendamento.svg" alt="Agendamentos">
 					</div>
 					<div class="icone__esquerda">
+						<div class="legenda__icone__pc">
+							Plano
+						</div>
 						<img class="img__icon__esquerda" src="../assets/img/icone-dinheiro.svg" alt="Plano">
 					</div>
 				</div>
@@ -171,7 +188,6 @@
 		<div class="campos__perfil__mobile">
 
 			<div class="opcoes__icones__mobile">
-				<div class="meio-circulo__branco-top">⠀</div>
 				<div class="icones__esquerda">
 					<div class="icone__esquerda">
 						<figure class="figure-container">
@@ -210,75 +226,32 @@
 						</figure>
 					</div>
 				</div>
-				<div class="meio-circulo__branco-bottom">⠀</div>
 			</div>
 
-			<div class="opcoes__icones__mobile-pequeno">
-				<div class="meio-circulo__branco-top">⠀</div>
-				<div class="icones__esquerda">
-					<div class="linha__icones__esquerda">
-						<div class="icone__esquerda">
-							<figure class="figure-container">
-								<img class="img__icon__esquerda" src="../assets/img/icone-perfil.svg" alt="Perfil">
-								<figcaption class="legenda__icones__atividade">Perfil</figcaption>
-							</figure>
-						</div>
-						<div class="icone__esquerda">
-							<figure class="figure-container">
-								<img class="img__icon__esquerda" src="../assets/img/icone-carro.svg" alt="Veículos">
-								<figcaption class="legenda__icones__atividade">Veículos</figcaption>
-							</figure>
-						</div>
-						<div class="icone__esquerda">
-							<figure class="figure-container">
-								<img class="img__icon__esquerda" src="../assets/img/icone-carrinho.svg" alt="Compras">
-								<figcaption class="legenda__icones__atividade">Compras</figcaption>
-							</figure>
-						</div>
-					</div>
-					<div class="linha__icones__esquerda">
-						<div class="icone__esquerda">
-							<figure class="figure-container">
-								<img class="img__icon__esquerda" src="../assets/img/icone-porco-dinheiro.svg" alt="Orçamentos">
-								<figcaption class="legenda__icones__atividade">Orçamentos</figcaption>
-							</figure>
-						</div>
-						<div class="icone__esquerda">
-							<figure class="figure-container">
-								<img class="img__icon__esquerda" src="../assets/img/icone-agendamento.svg" alt="Agendamentos">
-								<figcaption class="legenda__icones__atividade">Agendamentos</figcaption>
-							</figure>
-						</div>
-						<div class="icone__esquerda">
-							<figure class="figure-container">
-								<img class="img__icon__esquerda" src="../assets/img/icone-dinheiro.svg" alt="Plano">
-								<figcaption class="legenda__icones__atividade">Plano</figcaption>
-							</figure>
-						</div>
-					</div>
-				</div>
-				<div class="meio-circulo__branco-bottom">⠀</div>
-			</div>
-
+			
 			<div class="perfil__main__mobile">
 				<div class="espaco__branco">
 					<div class="div__title">
 						<h1>Olá, <?= $_SESSION['nomeCliente'] ?>!</h1>
-					</div>
-					<div class="upload">
-						<img src="../assets/img/img-perfil/<?php echo $user['fotoPerfil']; ?>" class="image" id="image" id="image"> <!-- Exibe a imagem atual do usuário -->
-						<div class="rightRound" id="upload">
-							<input type="file" name="fileImg" id ="fileImg" accept=".jpg, .jpeg, .png, .svg"> <!-- Input de seleção de arquivo -->
-							<i class="fa fa-camera" style='color:#ffc857'></i> <!-- Ícone de câmera -->
-						</div>
-						<div class="leftRound" id ="cancel" style="display: none;">
-							<i class = "fa fa-times" style='color:#ffc857'></i> <!-- Ícone de cancelar-->
-						</div>
-						<div class="rightRoundConfirm" id ="confirm" style="display: none;">
+					</div>					
+					<form action="../assets/scripts/trocarFoto.php" enctype="multipart/form-data"  method="post" class="informacoes__formulario"> <!-- Formulário que utiliza o atributo enctype para enviar arquivos multipart/form-data -->
+						<div class="upload">
+							<img src="../assets/img/img-perfil/<?php echo $user['fotoPerfil']; ?>" id="image" id="image"> <!-- Exibe a imagem atual do usuário -->
+
+							<div class="rightRound" id="upload">
+							<input type="file" name="fileImg" id ="fileImg" accept=".jpg, .jpeg, .png"> <!-- Input de seleção de arquivo -->
+							<i class="fa fa-camera"></i> <!-- Ícone de câmera -->
+							</div>
+
+							<div class="leftRound" id ="cancel" style="display: none;">
+							<i class = "fa fa-times"></i> <!-- Ícone de cancelar-->
+							</div>
+							<div class="rightRound" id ="confirm" style="display: none;">
 							<input type="submit"> <!-- Botão de envio do formulário -->
-							<i class = "fa fa-check" style='color:#ffc857'></i> <!-- Ícone de confirmar -->
+							<i class = "fa fa-check"></i> <!-- Ícone de confirmar -->
+							</div>
 						</div>
-					</div>
+					</form>
 				</div>
 				<div class="perfil__info">
 					<div class="caixa__info">
