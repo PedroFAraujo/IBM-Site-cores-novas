@@ -40,7 +40,7 @@ require_once('../assets/scripts/iniciarSessao.php');
                         <li> <img class="lupa icone__header" src="../assets/img/icone-search.svg" alt="Pesquisar"> </li>
                         <li class="pai-carrinho">
                             <nav id="carrinho__header">
-                                <img class="seta__header__carrinho" src="../assets/img/seta-modal.svg" alt="">
+                                <img class="seta__header__carrinho" src="../assets/img/seta-modal.png" alt="">
                                 <?php if (!empty($_SESSION['carrinho'])) { ?>
                                     <div id="itens__header__modal_carrinho">
                                         <div class="table__itens_header_carrinho">

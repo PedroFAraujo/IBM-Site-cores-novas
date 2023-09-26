@@ -33,13 +33,43 @@
             </div>
             <div class="cards">
                 <div class="card">
-                    <h3 class="card__title">Dropped</h3>
+                    <a href="agendamento-dropped.php" class="a__card">
+                        <div class="card__img">
+                            <img class="imagem__card" src="../assets/img/personalizacao-rebaixamento-dropped.png" alt="Estilização Sólida">
+                        </div>
+                        <div class="card__title">
+                            <h3>Estilo Dropped</h3>
+                        </div>
+                        <div class="card__descricao">
+                            <p> Estilo comum. Instalação de molas esportivas para o rebaixamento do veículo.</p>
+                        </div>
+                    </a>
                 </div>
                 <div class="card">
-                    <h3 class="card__title">Slammed</h3>
+                    <a href="agendamento-slammed.php" class="a__card">
+                        <div class="card__img">
+                            <img class="imagem__card" src="../assets/img/personalizacao-rebaixamento-slammed.png" alt="Estilização Sólida">
+                        </div>
+                        <div class="card__title">
+                            <h3>Estilo Slammed</h3>
+                        </div>
+                        <div class="card__descricao">
+                            <p>Rodas alinhadas de forma que entrem para dentro dos para-lamas do veículo.</p>
+                        </div>
+                    </a>
                 </div>
                 <div class="card">
-                    <h3 class="card__title">HellaFlush</h3>
+                    <a href="agendamento-hellaflush.php" class="a__card">
+                        <div class="card__img">
+                            <img class="imagem__card" src="../assets/img/personalizacao-rebaixamento-hellaflush.png" alt="Estilização Duas Cores">
+                        </div>
+                        <div class="card__title">
+                            <h3>HellaFlush</h3>
+                        </div>
+                        <div class="card__descricao">
+                            <p>Os carros são extremamente baixos e usam rodas bem largas. <br> Offset baixo ou negativo.</p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -51,13 +81,244 @@
             </div>
             <div class="cards">
                 <div class="card">
-                    <h3 class="card__title">Sólida</h3>
+                    <a href="agendamento-pintura-solida.php" class="a__card">
+                        <div class="card__img">
+                            <img class="imagem__card" src="../assets/img/personalizacao-pintura-solida.png" alt="Estilização Sólida">
+                        </div>
+                        <div class="card__title">
+                            <h3>Sólida</h3>
+                        </div>
+                        <div class="card__descricao">
+                            <p>Tipo mais básico, contém pigmentos de cor, sendo mais opaco.</p>
+                        </div>
+                    </a>
                 </div>
                 <div class="card">
-                    <h3 class="card__title">Metálica</h3>
+                    <a href="agendamento-pintura-metalica.php" class="a__card">
+                        <div class="card__img">
+                            <img class="imagem__card" src="../assets/img/personalizacao-pintura-metalica.png" alt="Estilização Sólida">
+                        </div>
+                        <div class="card__title">
+                            <h3>Metálica</h3>
+                        </div>
+                        <div class="card__descricao">
+                            <p>Pintura apresenta um reflexo mais intenso, dando mais vida à cor.</p>
+                        </div>
+                    </a>
                 </div>
                 <div class="card">
-                    <h3 class="card__title">Perolizada</h3>
+                    <a href="agendamento-pintura-perolizada.php" class="a__card">
+                        <div class="card__img">
+                            <img class="imagem__card" src="../assets/img/personalizacao-pintura-perolizada.png" alt="Estilização Sólida">
+                        </div>
+                        <div class="card__title">
+                            <h3>Perolizada</h3>
+                        </div>
+                        <div class="card__descricao">
+                            <p>Sensação de haver diferentes cores no veículo dependendo do ambiente onde se encontra.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!--PNEU-->
+        <div class="linha__cards">
+            <div class="card__subtitle">
+                <h2>Pneu</h2>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <a href="pneu-solido.php" class="a__card">
+                        <div class="div__card__img__pneu">
+                            <img class="card__img__pneu" src="../assets/img/personalizacao-roda-solida-dourado.png" alt="Estilização Sólida">
+                        </div>
+                        <div class="card__title">
+                            <h3>Sólida</h3>
+                        </div>
+                        <div class="card__descricao">
+                            <p>Utilizada uma cor única para toda a roda, tipo de pintura mais básica.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="pneu-personalizado.php" class="a__card">
+                        <div class="div__card__img__pneu">
+                            <img class="card__img__pneu" src="../assets/img/personalizacao-roda-perso-azulrosa.png" alt="Estilização Personalizada">
+                        </div>
+                        <div class="card__title">
+                            <h3>Personalizada</h3>
+                        </div>
+                        <div class="card__descricao">
+                            <p>Efeito de pigmentação, há vários pigmentos que são misturados à cor ou ao verniz.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="pneu-duasCores.php" class="a__card">
+                        <div class="div__card__img__pneu">
+                            <img class="card__img__pneu" src="../assets/img/personalizacao-roda-duas-pretored.png" alt="Estilização Duas Cores">
+                        </div>
+                        <div class="card__title">
+                            <h3>Duas Cores</h3>
+                        </div>
+                        <div class="card__descricao">
+                            <p>Rodas com bordas de duas cores, possibilitando uma essência mais esportiva.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!--ADESIVOS-->
+        <div class="linha__cards">
+            <div class="card__subtitle">
+                <h2>Adesivos</h2>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <a href="adesivo-pequeno.php" class="a__card">
+                        <div class="card__img">
+                            <img class="imagem__card__adesivo" src="../assets/img/personalizacao-adesivo-pequeno.png" alt="Estilização Sólida">
+                        </div>
+                        <div class="card__title">
+                            <h3>Pequeno</h3>
+                        </div>
+                        <div class="card__descricao">
+                            <p>Adesivos de tamanho pequeno.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="adesivo-medio.php" class="a__card">
+                        <div class="card__img">
+                            <img class="imagem__card__adesivo" src="../assets/img/personalizacao-adesivo-medio.png" alt="Estilização Sólida">
+                        </div>
+                        <div class="card__title">
+                            <h3>Médio</h3>
+                        </div>
+                        <div class="card__descricao">
+                            <p>Adesivos de tamanho medio.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="adesivo-grande.php" class="a__card">
+                        <div class="card__img">
+                            <img class="imagem__card__adesivo" src="../assets/img/personalizacao-adesivo-grande.png" alt="Estilização Sólida">
+                        </div>
+                        <div class="card__title">
+                            <h3>Grande</h3>
+                        </div>
+                        <div class="card__descricao">
+                            <p>Adesivos de tamanho grande.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!--MODIFICAÇÕES EXTERNAS-->
+        <div class="linha__cards">
+            <div class="card__subtitle">
+                <h2>Modificações externas</h2>
+            </div>
+            <div class="cards cards2">
+                <div class="card">
+                    <a href="aerofolio.php" class="a__card">
+                        <div class="card__img">
+                            <img class="imagem__card imagem__card__modificacoes-ex" src="../assets/img/personalizacao-modificacao-aerofolio.png" alt="Estilização Sólida">
+                        </div>
+                        <div class="card__title">
+                            <h3>Aerofólio</h3>
+                        </div>
+                        <div class="card__descricao">
+                            <p>Tem como objetivo aumentar a aderência do veículo à estrada e melhorar seu desempenho.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="agendamento-vidro.php" class="a__card">
+                        <div class="card__img">
+                            <img class="imagem__card imagem__card__modificacoes-ex" src="../assets/img/personalizacao-modificacao-vidro.png" alt="Estilização Sólida">
+                        </div>
+                        <div class="card__title">
+                            <h3>Vidros</h3>
+                        </div>
+                        <div class="card__descricao">
+                            <p>Insulfilm diminui o esforço ocular, conserva o interior do carro, fornece maior segurança, etc.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!--MODIFICAÇÕES INTERNAS-->
+        <div class="linha__cards">
+            <div class="card__subtitle">
+                <h2>Modificações internas</h2>
+            </div>
+            <div class="cards cards2">
+                <div class="card">
+                    <a href="caixaDeSom.php" class="a__card">
+                        <div class="card__img">
+                            <img class="imagem__card imagem__card__modificacoes-in" id="imagem__card__caixa-som" src="../assets/img/personalizacao-modificacao-caixasom.png" alt="Estilização Sólida">
+                        </div>
+                        <div class="card__title">
+                            <h3>Caixa de Som</h3>
+                        </div>
+                        <div class="card__descricao">
+                            <p>Caixas de som de diversos tamanhos e potências para serem acopladas no seu veículo.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="banco.php" class="a__card">
+                        <div class="card__img">
+                            <img class="imagem__card" id="imagem__card__banco" src="../assets/img/personalizacao-modificacao-bancos.png" alt="Estilização Sólida">
+                        </div>
+                        <div class="card__title">
+                            <h3>Bancos</h3>
+                        </div>
+                        <div class="card__descricao">
+                            <p>Bancos personalizados trazem mais sofisticação para seu veículo.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!--Tunagem-->
+        <div class="linha__cards">
+            <div class="card__subtitle">
+                <h2>Tunagem</h2>
+            </div>
+            <div class="cards cards2">
+                <div class="card">
+                    <a href="agendamento-reformulado.php" class="a__card">
+                        <div class="div__card__img__pneu">
+                            <img class="imagem__card imagem__card__tunagem" src="../assets/img/personalizacao-motor1.png" alt="Estilização Sólida">
+                        </div>
+                        <div class="card__title">
+                            <h3>Reformulado</h3>
+                        </div>
+                        <div class="card__descricao">
+                            <p>Feito com base no original: É removido, desmontado, limpo, inspecionado, quando preciso, reparado e testado.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="agendamento-remanufaturado.php" class="a__card" id="a__card__tunagem2">
+                        <div class="div__card__img__pneu">
+                            <img class="imagem__card" id="imagem__card__tunagem2" src="../assets/img/personalizacao-motor2.png" alt="Estilização Personalizada">
+                        </div>
+                        <div class="card__title">
+                            <h3 id="titulo__card__remanufaturado">Remanufaturado</h3>
+                        </div>
+                        <div class="card__descricao">
+                            <p>Motores têm uma completa mudança se comparado ao original. Respeita as limitações do modelo.</p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
